@@ -24,7 +24,17 @@ public abstract class Unidade {
 
     }
 
-
+protected static float lerValor(java.util.Scanner scanner, String mensagem) {
+    System.out.print(mensagem);
+    while (!scanner.hasNextFloat()) {
+        System.out.println("Valor inválido, tente novamente.");
+        scanner.nextLine();
+        System.out.print(mensagem);
+    }
+    float valor = scanner.nextFloat();
+    scanner.nextLine(); // Limpa o buffer
+    return valor;
+}
 
 
 
@@ -36,4 +46,3 @@ public abstract class Unidade {
     return temp_Convertida;
 }
 }
-

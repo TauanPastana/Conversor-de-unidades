@@ -1,6 +1,6 @@
 package classes;
 
-import java.util.InputMismatchException;
+// import java.util.InputMismatchException;
 
 public class Temperatura extends Unidade {
 
@@ -11,61 +11,59 @@ public class Temperatura extends Unidade {
     }
 
     public static Temperatura Setvalor(java.util.Scanner scanner){
-        try {
-            System.out.print("Adicione o valor atual: ");
-            float temp_Atual = scanner.nextFloat();
-            return new Temperatura(temp_Atual);
-            
-        } catch (InputMismatchException e) {
-            System.out.println("Opção inválida, digite entre 1 a 6");
-            scanner.nextLine();
-            return null ;
-        }
+        float valor = Temperatura.lerValor(scanner, "Digite o valor a ser convertido: ");
+        return new Temperatura(valor);
     }
 
 
-    public void Celsius_to_Fahrenheit(){
+    public void Celsius_to_Fahrenheit() {
         float atual = getTempAtual();
         float convertido = (atual * 9 / 5) + 32;
-        setTemp_Convertida(convertido); 
-        System.out.println("A temperatura em Celsius (" + getTempAtual() + "°C) foi convertida para Fahrenheit: " + getTempConvertida() + "°F");
-
+        setTemp_Convertida(convertido);
+        System.out.printf("%.2f°C = %.2f°F%n", getTempAtual(), getTempConvertida());
+        System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
-    public void Fahrenheit_to_Celsius(){
+    public void Fahrenheit_to_Celsius() {
         float atual = getTempAtual();
-        float convertido = (atual -32) * 5/9;
-        setTemp_Convertida(convertido); 
-        System.out.println("A temperatura em Fahrenheit (" + getTempAtual() + "°F) foi convertida para Celsius: " + getTempConvertida() + "°C");
+        float convertido = (atual - 32) * 5 / 9;
+        setTemp_Convertida(convertido);
+        System.out.printf("%.2f°F = %.2f°C%n", getTempAtual(), getTempConvertida());
+        System.out.println("Conversão realizada: Fahrenheit para Celsius.");
     }
-    
+
     public void Celsius_to_Kelvin() {
         float atual = getTempAtual();
         float convertido = atual + 273.15f;
         setTemp_Convertida(convertido);
-        System.out.println("A temperatura em Celsius (" + getTempAtual() + "°C) foi convertida para Kelvin: " + getTempConvertida() + "K");
+        System.out.printf("%.2f°C = %.2fK%n", getTempAtual(), getTempConvertida());
+        System.out.println("Conversão realizada: Celsius para Kelvin.");
     }
 
     public void Kelvin_to_Celsius() {
         float atual = getTempAtual();
         float convertido = atual - 273.15f;
         setTemp_Convertida(convertido);
-        System.out.println("A temperatura em Kelvin (" + getTempAtual() + "K) foi convertida para Celsius: " + getTempConvertida() + "°C");
+        System.out.printf("%.2fK = %.2f°C%n", getTempAtual(), getTempConvertida());
+        System.out.println("Conversão realizada: Kelvin para Celsius.");
     }
 
     public void Fahrenheit_to_Kelvin() {
         float atual = getTempAtual();
-        float convertido = (atual - 32) * 5/9 + 273.15f;
+        float convertido = (atual - 32) * 5 / 9 + 273.15f;
         setTemp_Convertida(convertido);
-        System.out.println("A temperatura em Fahrenheit (" + getTempAtual() + "°F) foi convertida para Kelvin: " + getTempConvertida() + "K");
+        System.out.printf("%.2f°F = %.2fK%n", getTempAtual(), getTempConvertida());
+        System.out.println("Conversão realizada: Fahrenheit para Kelvin.");
     }
 
     public void Kelvin_to_Fahrenheit() {
         float atual = getTempAtual();
-        float convertido = (atual - 273.15f) * 9/5 + 32;
+        float convertido = (atual - 273.15f) * 9 / 5 + 32;
         setTemp_Convertida(convertido);
-        System.out.println("A temperatura em Kelvin (" + getTempAtual() + "K) foi convertida para Fahrenheit: " + getTempConvertida() + "°F");
+        System.out.printf("%.2fK = %.2f°F%n", getTempAtual(), getTempConvertida());
+        System.out.println("Conversão realizada: Kelvin para Fahrenheit.");
     }
+    
     public static void Menu(java.util.Scanner scanner){
         System.out.println("Escolha uma opção de conversão:");
         System.out.println("1. Celsius para Fahrenheit");
@@ -77,40 +75,41 @@ public class Temperatura extends Unidade {
         System.out.print("Opção: ");
 
         
-        Temperatura temp = null;
-        
+        Temperatura temp;
+
         String input = scanner.nextLine();
-        Temperatura.clear_terminal();
+        // Temperatura.clear_terminal();
         switch (input) {
             case "1":
             temp = Temperatura.Setvalor(scanner);
-            if (temp != null) temp.Celsius_to_Fahrenheit();
+            temp.Celsius_to_Fahrenheit();
             break;
             case "2":
             temp = Temperatura.Setvalor(scanner);
-            if (temp != null) temp.Fahrenheit_to_Celsius();
+            temp.Fahrenheit_to_Celsius();
             break;
             case "3":
             temp = Temperatura.Setvalor(scanner);
-            if (temp != null) temp.Celsius_to_Kelvin();
+            temp.Celsius_to_Kelvin();
             break;
             case "4":
             temp = Temperatura.Setvalor(scanner);
-            if (temp != null) temp.Kelvin_to_Celsius();
+            temp.Kelvin_to_Celsius();
             break;
             case "5":
             temp = Temperatura.Setvalor(scanner);
-            if (temp != null) temp.Fahrenheit_to_Kelvin();
+            temp.Fahrenheit_to_Kelvin();
             break;
             case "6":
             temp = Temperatura.Setvalor(scanner);
-            if (temp != null) temp.Kelvin_to_Fahrenheit();
+            temp.Kelvin_to_Fahrenheit();
             break;
             default:
             System.out.println("Opção inválida.");
         }
         }
-    }
+        }
+    
 
 
 
@@ -118,4 +117,3 @@ public class Temperatura extends Unidade {
 
     
     
-
