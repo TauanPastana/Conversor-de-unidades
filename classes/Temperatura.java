@@ -11,7 +11,7 @@ public class Temperatura extends Unidade {
     }
 
     public static Temperatura Setvalor(java.util.Scanner scanner){
-        float valor = Temperatura.lerValor(scanner, "Digite o valor a ser convertido: ");
+        float valor = Temperatura.lerValor(scanner, "Digite o valor a ser convertido: ", true);
         return new Temperatura(valor);
     }
 
@@ -20,7 +20,7 @@ public class Temperatura extends Unidade {
         float atual = getTempAtual();
         float convertido = (atual * 9 / 5) + 32;
         setTemp_Convertida(convertido);
-        System.out.printf("%.2f°C = %.2f°F%n", getTempAtual(), getTempConvertida());
+        System.out.printf("Conversão: %.2f°C equivalem a %.2f°F.%n", getTempAtual(), getTempConvertida());
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
@@ -28,7 +28,7 @@ public class Temperatura extends Unidade {
         float atual = getTempAtual();
         float convertido = (atual - 32) * 5 / 9;
         setTemp_Convertida(convertido);
-        System.out.printf("%.2f°F = %.2f°C%n", getTempAtual(), getTempConvertida());
+        System.out.printf("Conversão: %.2f°F equivalem a %.2f°C.%n", getTempAtual(), getTempConvertida());
         System.out.println("Conversão realizada: Fahrenheit para Celsius.");
     }
 
@@ -36,7 +36,7 @@ public class Temperatura extends Unidade {
         float atual = getTempAtual();
         float convertido = atual + 273.15f;
         setTemp_Convertida(convertido);
-        System.out.printf("%.2f°C = %.2fK%n", getTempAtual(), getTempConvertida());
+        System.out.printf("Conversão: %.2f°C equivalem a %.2fK.%n", getTempAtual(), getTempConvertida());
         System.out.println("Conversão realizada: Celsius para Kelvin.");
     }
 
@@ -44,7 +44,7 @@ public class Temperatura extends Unidade {
         float atual = getTempAtual();
         float convertido = atual - 273.15f;
         setTemp_Convertida(convertido);
-        System.out.printf("%.2fK = %.2f°C%n", getTempAtual(), getTempConvertida());
+        System.out.printf("Conversão: %.2fK equivalem a %.2f°C.%n", getTempAtual(), getTempConvertida());
         System.out.println("Conversão realizada: Kelvin para Celsius.");
     }
 
@@ -52,7 +52,7 @@ public class Temperatura extends Unidade {
         float atual = getTempAtual();
         float convertido = (atual - 32) * 5 / 9 + 273.15f;
         setTemp_Convertida(convertido);
-        System.out.printf("%.2f°F = %.2fK%n", getTempAtual(), getTempConvertida());
+        System.out.printf("Conversão: %.2f°F equivalem a %.2fK.%n", getTempAtual(), getTempConvertida());
         System.out.println("Conversão realizada: Fahrenheit para Kelvin.");
     }
 

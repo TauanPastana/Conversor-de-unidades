@@ -24,16 +24,26 @@ public abstract class Unidade {
 
     }
 
-protected static float lerValor(java.util.Scanner scanner, String mensagem) {
-    System.out.print(mensagem);
-    while (!scanner.hasNextFloat()) {
-        System.out.println("Valor inválido, tente novamente.");
-        scanner.nextLine();
+protected static float lerValor(java.util.Scanner scanner, String mensagem, boolean cond) {
+    while (true) {
         System.out.print(mensagem);
+        if (scanner.hasNextFloat()) {
+            float valor = scanner.nextFloat();
+            scanner.nextLine(); // Limpa o buffer
+            if (cond) { // Temperatura: aceita qualquer valor float
+                return valor;
+            } else { // Medida: só aceita positivo
+                if (valor > 0) {
+                    return valor;
+                } else {
+                    System.out.println("Valor inválido, digite um número positivo.");
+                }
+            }
+        } else {
+            System.out.println("Valor inválido, tente novamente.");
+            scanner.nextLine(); // Limpa o buffer
+        }
     }
-    float valor = scanner.nextFloat();
-    scanner.nextLine(); // Limpa o buffer
-    return valor;
 }
 
 

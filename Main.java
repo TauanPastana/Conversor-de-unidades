@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+import classes.Medida;
 import classes.Temperatura;
 
 
@@ -12,14 +13,15 @@ public class Main {
         System.out.println("Bem vindo ao sistema de Conversor de unidades");
         while (cond) {
             System.out.println("Digite 1 se deseja converter temperaturas");
+            System.out.println("Digite 2 se deseja converter medidas");
             String opc = scanner.nextLine();
-
+             
             switch (opc) {
                 case "1":
                     Temperatura.Menu(scanner);
                     break;
                 case "2":
-                    // Adicione lógica para a opção 2 aqui
+                    Medida.Menu(scanner);
                     break;
                 case "3":
                     // Adicione lógica para a opção 3 aqui
