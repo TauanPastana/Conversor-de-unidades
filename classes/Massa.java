@@ -48,35 +48,42 @@ public class Massa extends Unidade {
 
     public static void Menu(Scanner scanner) {
         Massa.clear_terminal();
-        System.out.println("Escolha uma opção de conversão:");
-        System.out.println("1. Quilogramas para Gramas");
-        System.out.println("2. Quilogramas para Libras");
-        System.out.println("3. Gramas para Quilogramas");
-        System.out.println("4. Libras para Quilogramas");
-        System.out.print("Opção: ");
+        System.out.println("\n=== CONVERSOR DE MASSA ===");
+        System.out.println("\n=== CONVERSOR DE MASSA ===");
+        System.out.println("Selecione o tipo de conversão:");
+        System.out.println("--------------------------------");
+        System.out.println("1. Quilogramas - Gramas");
+        System.out.println("2. Quilogramas - Libras");
+        System.out.println("3. Gramas - Quilogramas");
+        System.out.println("4. Libras - Quilogramas");
+        System.out.println("--------------------------------");
+        System.out.println("0. Voltar ao menu principal");
+        System.out.print("\nDigite a opção desejada: ");
 
         String input = scanner.nextLine();
         Massa massa;
 
         switch (input) {
             case "1":
-                massa = Massa.setValor(scanner);
-                massa.Quilogramas_para_Gramas();
-                break;
+            massa = Massa.setValor(scanner);
+            massa.Quilogramas_para_Gramas();
+            break;
             case "2":
-                massa = Massa.setValor(scanner);
-                massa.Quilogramas_para_Libras();
-                break;
+            massa = Massa.setValor(scanner);
+            massa.Quilogramas_para_Libras();
+            break;
             case "3":
-                massa = Massa.setValor(scanner);
-                massa.Gramas_para_Quilogramas();
-                break;
+            massa = Massa.setValor(scanner);
+            massa.Gramas_para_Quilogramas();
+            break;
             case "4":
-                massa = Massa.setValor(scanner);
-                massa.Libras_para_Quilogramas();
-                break;
+            massa = Massa.setValor(scanner);
+            massa.Libras_para_Quilogramas();
+            break;
+            case "0":
+            break;
             default:
-                System.out.println("Opção inválida.");
+            System.out.println("Opção inválida.");
         }
 
         // Pausa para o usuário visualizar o resultado

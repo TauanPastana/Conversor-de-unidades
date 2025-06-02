@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Medida extends Unidade {
 
     public Medida(float medida_Atual){
-        // boolean cond = (medida_Atual<0)?
         super(medida_Atual);
     }
 
@@ -83,55 +82,63 @@ public class Medida extends Unidade {
 
     public static void Menu(Scanner scanner) {
         Medida.clear_terminal();
-        System.out.println("Escolha uma opção de conversão:");
-        System.out.println("1. Metros para Centímetros");
-        System.out.println("2. Metros para Milímetros");
-        System.out.println("3. Metros para Polegadas");
-        System.out.println("4. Metros para Pés");
-        System.out.println("5. Centímetros para Metros");
-        System.out.println("6. Milímetros para Metros");
-        System.out.println("7. Polegadas para Metros");
-        System.out.println("8. Pés para Metros");
-        System.out.print("Opção: ");
+        System.out.println("\n=== CONVERSOR DE MEDIDAS ===");
+        System.out.println("Selecione o tipo de conversão:");
+        System.out.println("--------------------------------");
+        System.out.println("1. Metros - Centímetros");
+        System.out.println("2. Metros - Milímetros");
+        System.out.println("3. Metros - Polegadas");
+        System.out.println("4. Metros - Pés");
+        System.out.println("--------------------------------");
+        System.out.println("5. Centímetros - Metros");
+        System.out.println("6. Milímetros - Metros");
+        System.out.println("7. Polegadas - Metros");
+        System.out.println("8. Pés - Metros");
+        System.out.println("--------------------------------");
+        System.out.println("0. Voltar ao menu principal");
+        System.out.print("\nDigite a opção desejada: ");
 
         String input = scanner.nextLine();
         Medida medida;
 
         switch (input) {
             case "1":
-                medida = Medida.setValor(scanner);
-                medida.Metros_para_Centimetros();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Metros_para_Centimetros();
+            break;
             case "2":
-                medida = Medida.setValor(scanner);
-                medida.Metros_para_Milimetros();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Metros_para_Milimetros();
+            break;
             case "3":
-                medida = Medida.setValor(scanner);
-                medida.Metros_para_Polegadas();
-                break;
-             case "4":
-                medida = Medida.setValor(scanner);
-                medida.Metros_para_Pes();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Metros_para_Polegadas();
+            break;
+            case "4":
+            medida = Medida.setValor(scanner);
+            medida.Metros_para_Pes();
+            break;
             case "5":
-                medida = Medida.setValor(scanner);
-                medida.Centimetros_para_Metros();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Centimetros_para_Metros();
+            break;
             case "6":
-                medida = Medida.setValor(scanner);
-                medida.Milimetros_para_Metros();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Milimetros_para_Metros();
+            break;
             case "7":
-                medida = Medida.setValor(scanner);
-                medida.Polegadas_para_Metros();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Polegadas_para_Metros();
+            break;
             case "8":
-                medida = Medida.setValor(scanner);
-                medida.Pes_para_Metros();
-                break;
+            medida = Medida.setValor(scanner);
+            medida.Pes_para_Metros();
+            break;
+            case "0":
+            // Voltar ao menu principal
+            break;
             default:
-                System.out.println("Opção inválida.");
+            System.out.println("Opção inválida.");
         }
         System.out.println("Pressione Enter para continuar...");
         scanner.nextLine();

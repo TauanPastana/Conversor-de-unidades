@@ -67,14 +67,18 @@ public class Temperatura extends Unidade {
     
     public static void Menu(java.util.Scanner scanner){
         Temperatura.clear_terminal();
-        System.out.println("Escolha uma opção de conversão:");
-        System.out.println("1. Celsius para Fahrenheit");
-        System.out.println("2. Fahrenheit para Celsius");
-        System.out.println("3. Celsius para Kelvin");
-        System.out.println("4. Kelvin para Celsius");
-        System.out.println("5. Fahrenheit para Kelvin");
-        System.out.println("6. Kelvin para Fahrenheit");
-        System.out.print("Opção: ");
+        System.out.println("\n=== CONVERSOR DE TEMPERATURA ===");
+        System.out.println("Selecione o tipo de conversão:");
+        System.out.println("--------------------------------");
+        System.out.println("1. Celsius - Fahrenheit");
+        System.out.println("2. Fahrenheit - Celsius");
+        System.out.println("3. Celsius - Kelvin");
+        System.out.println("4. Kelvin - Celsius");
+        System.out.println("5. Fahrenheit - Kelvin");
+        System.out.println("6. Kelvin - Fahrenheit");
+        System.out.println("--------------------------------");
+        System.out.println("0. Voltar ao menu principal");
+        System.out.print("\nDigite a opção desejada: ");
 
         
         Temperatura temp;
@@ -105,6 +109,8 @@ public class Temperatura extends Unidade {
             case "6":
             temp = Temperatura.Setvalor(scanner);
             temp.Kelvin_to_Fahrenheit();
+            break;
+            case "0":
             break;
             default:
             System.out.println("Opção inválida.");
