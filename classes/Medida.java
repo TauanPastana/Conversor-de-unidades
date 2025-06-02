@@ -10,7 +10,8 @@ public class Medida extends Unidade {
     }
 
     public static Medida setValor(Scanner scanner){
-        float valor = Medida.lerValor(scanner, "Adicione o valor a ser convertido: ", false);
+        Medida.clear_terminal();
+        float valor = Medida.lerValor(scanner, "Adicione o valor a ser convertido: \n", false);
         return new Medida(valor);
 
     }
@@ -81,6 +82,7 @@ public class Medida extends Unidade {
     
 
     public static void Menu(Scanner scanner) {
+        Medida.clear_terminal();
         System.out.println("Escolha uma opção de conversão:");
         System.out.println("1. Metros para Centímetros");
         System.out.println("2. Metros para Milímetros");

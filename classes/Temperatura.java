@@ -11,7 +11,8 @@ public class Temperatura extends Unidade {
     }
 
     public static Temperatura Setvalor(java.util.Scanner scanner){
-        float valor = Temperatura.lerValor(scanner, "Digite o valor a ser convertido: ", true);
+        Temperatura.clear_terminal();
+        float valor = Temperatura.lerValor(scanner, "Digite o valor a ser convertido: \n", true);
         return new Temperatura(valor);
     }
 
@@ -65,6 +66,7 @@ public class Temperatura extends Unidade {
     }
     
     public static void Menu(java.util.Scanner scanner){
+        Temperatura.clear_terminal();
         System.out.println("Escolha uma opção de conversão:");
         System.out.println("1. Celsius para Fahrenheit");
         System.out.println("2. Fahrenheit para Celsius");

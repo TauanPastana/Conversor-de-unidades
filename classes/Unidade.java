@@ -19,32 +19,46 @@ public abstract class Unidade {
 
 
 
-    public static void clear_terminal(){
-        
-
-    }
-
-protected static float lerValor(java.util.Scanner scanner, String mensagem, boolean cond) {
-    while (true) {
-        System.out.print(mensagem);
-        if (scanner.hasNextFloat()) {
-            float valor = scanner.nextFloat();
-            scanner.nextLine(); // Limpa o buffer
-            if (cond) { // Temperatura: aceita qualquer valor float
-                return valor;
-            } else { // Medida: só aceita positivo
-                if (valor > 0) {
-                    return valor;
-                } else {
-                    System.out.println("Valor inválido, digite um número positivo.");
-                }
+    public static void clear_terminal() {
+        try {
+            if (System.getProperty("os.name").toLowerCase().contains("win")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
             }
-        } else {
-            System.out.println("Valor inválido, tente novamente.");
-            scanner.nextLine(); // Limpa o buffer
+        } catch (Exception e) {
+            System.out.println("Não foi possível limpar o terminal.");
         }
     }
-}
+
+
+
+
+    protected static float lerValor(java.util.Scanner scanner, String mensagem, boolean cond) {
+        while (true) {
+            System.out.print(mensagem);
+            if (scanner.hasNextFloat()) {
+                float valor = scanner.nextFloat();
+                scanner.nextLine(); // Limpa o buffer
+                if (cond) { // Temperatura: aceita qualquer valor float
+                    return valor;
+                } else { // Medida: só aceita positivo
+                    if (valor > 0) {
+                        return valor;
+                    } else {
+                        System.out.println("\nValor inválido, digite um número positivo.");
+                    }
+                }
+            } else {
+                System.out.println("Valor inválido, tente novamente.");
+                scanner.nextLine(); // Limpa o buffer
+            }
+        }
+    }
+
+    protected static void back(){
+
+    }
 
 
 
