@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+import classes.Massa;
 import classes.Medida;
 import classes.Temperatura;
 
@@ -15,6 +16,7 @@ public class Main {
         while (cond) {
             System.out.println("\nDigite 1 se deseja converter temperaturas");
             System.out.println("Digite 2 se deseja converter medidas");
+            System.out.println("Digite 3 se deseja converter massa");
             String opc = scanner.nextLine();
              
             switch (opc) {
@@ -26,7 +28,7 @@ public class Main {
                     Medida.Menu(scanner);
                     break;
                 case "3":
-                    // Adicione lógica para a opção 3 aqui
+                    Massa.Menu(scanner);
                     break;
                 default:
                     System.out.println("Opção inválida.");

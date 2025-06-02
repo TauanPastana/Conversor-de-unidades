@@ -109,6 +109,8 @@ public class Temperatura extends Unidade {
             default:
             System.out.println("Opção inválida.");
         }
+        System.out.println("Pressione Enter para continuar...");
+        scanner.nextLine();
         }
         }
     

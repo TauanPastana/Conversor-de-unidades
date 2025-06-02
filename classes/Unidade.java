@@ -56,9 +56,6 @@ public abstract class Unidade {
         }
     }
 
-    protected static void back(){
-
-    }
 
 
 
