@@ -15,33 +15,33 @@ public class Massa extends Unidade {
     }
 
     public void Quilogramas_para_Gramas() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual * 1000;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f Kg equivalem a %.2f g.%n", atual, convertido);
         System.out.println("Conversão realizada: Quilogramas para Gramas.");
     }
 
     public void Quilogramas_para_Libras() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual * 2.20462f;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f Kg equivalem a %.2f libras.%n", atual, convertido);
         System.out.println("Conversão realizada: Quilogramas para Libras.");
     }
 
     public void Gramas_para_Quilogramas() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual / 1000;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f g equivalem a %.2f Kg.%n", atual, convertido);
         System.out.println("Conversão realizada: Gramas para Quilogramas.");
     }
 
     public void Libras_para_Quilogramas() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual / 2.20462f;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f libras equivalem a %.2f Kg.%n", atual, convertido);
         System.out.println("Conversão realizada: Libras para Quilogramas.");
     }

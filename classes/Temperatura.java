@@ -1,15 +1,13 @@
 package classes;
 
-// import java.util.InputMismatchException;
-
 public class Temperatura extends Unidade {
 
+    // Super construtor da classe Unidade
     public Temperatura(float temp_Atual){
-
     super(temp_Atual);
     
     }
-
+    // Quando chamado, ocorre um processo para inserir um valor float e após isso retorna o contrutor com o valor para criar o objeto "temp"
     public static Temperatura Setvalor(java.util.Scanner scanner){
         Temperatura.clear_terminal();
         float valor = Temperatura.lerValor(scanner, "Digite o valor a ser convertido: \n", true);
@@ -18,50 +16,51 @@ public class Temperatura extends Unidade {
 
 
     public void Celsius_to_Fahrenheit() {
-        float atual = getTempAtual();
-        float convertido = (atual * 9 / 5) + 32;
-        setTemp_Convertida(convertido);
-        System.out.printf("Conversão: %.2f°C equivalem a %.2f°F.%n", getTempAtual(), getTempConvertida());
+        // Como o atributo "tem_Atual" é um atributo privado, é necessário pegar o seu valor com um get
+        float atual = getUnidadeAtual();
+        float convertido = (atual * 9 / 5) + 32; // Ocorre o cálculo dá conversão e guarda o valor numa variável temporária
+        setUnidade_Convertida(convertido); //seta o valor da variável temporária no atributo "Unidade_Convertido"
+        System.out.printf("Conversão: %.2f°C equivalem a %.2f°F.%n", getUnidadeAtual(), getUnidadeConvertida());
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Fahrenheit_to_Celsius() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = (atual - 32) * 5 / 9;
-        setTemp_Convertida(convertido);
-        System.out.printf("Conversão: %.2f°F equivalem a %.2f°C.%n", getTempAtual(), getTempConvertida());
+        setUnidade_Convertida(convertido);
+        System.out.printf("Conversão: %.2f°F equivalem a %.2f°C.%n", getUnidadeAtual(), getUnidadeConvertida());
         System.out.println("Conversão realizada: Fahrenheit para Celsius.");
     }
 
     public void Celsius_to_Kelvin() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual + 273.15f;
-        setTemp_Convertida(convertido);
-        System.out.printf("Conversão: %.2f°C equivalem a %.2fK.%n", getTempAtual(), getTempConvertida());
+        setUnidade_Convertida(convertido);
+        System.out.printf("Conversão: %.2f°C equivalem a %.2fK.%n", getUnidadeAtual(), getUnidadeConvertida());
         System.out.println("Conversão realizada: Celsius para Kelvin.");
     }
 
     public void Kelvin_to_Celsius() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual - 273.15f;
-        setTemp_Convertida(convertido);
-        System.out.printf("Conversão: %.2fK equivalem a %.2f°C.%n", getTempAtual(), getTempConvertida());
+        setUnidade_Convertida(convertido);
+        System.out.printf("Conversão: %.2fK equivalem a %.2f°C.%n", getUnidadeAtual(), getUnidadeConvertida());
         System.out.println("Conversão realizada: Kelvin para Celsius.");
     }
 
     public void Fahrenheit_to_Kelvin() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = (atual - 32) * 5 / 9 + 273.15f;
-        setTemp_Convertida(convertido);
-        System.out.printf("Conversão: %.2f°F equivalem a %.2fK.%n", getTempAtual(), getTempConvertida());
+        setUnidade_Convertida(convertido);
+        System.out.printf("Conversão: %.2f°F equivalem a %.2fK.%n", getUnidadeAtual(), getUnidadeConvertida());
         System.out.println("Conversão realizada: Fahrenheit para Kelvin.");
     }
 
     public void Kelvin_to_Fahrenheit() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = (atual - 273.15f) * 9 / 5 + 32;
-        setTemp_Convertida(convertido);
-        System.out.printf("%.2fK = %.2f°F%n", getTempAtual(), getTempConvertida());
+        setUnidade_Convertida(convertido);
+        System.out.printf("%.2fK = %.2f°F%n", getUnidadeAtual(), getUnidadeConvertida());
         System.out.println("Conversão realizada: Kelvin para Fahrenheit.");
     }
     
@@ -79,16 +78,19 @@ public class Temperatura extends Unidade {
         System.out.println("--------------------------------");
         System.out.println("0. Voltar ao menu principal");
         System.out.print("\nDigite a opção desejada: ");
-
-        
+ 
+        // Instância o objeto temp
         Temperatura temp;
 
         String input = scanner.nextLine();
-        // Temperatura.clear_terminal();
+        // Menu das funções de temperaturas
         switch (input) {
             case "1":
+            // o objeto "temp" da classe Temperatura, vai receber como retorno a invocação de um construtor com um determinado valor para sua criação
             temp = Temperatura.Setvalor(scanner);
+            // Após o objeto criado, invocamos o método para converter o atributo "tem_Atual" do objeto "temp" de Celsius para Fahrenheit
             temp.Celsius_to_Fahrenheit();
+            // Usa o break para voltar para o menu Principal
             break;
             case "2":
             temp = Temperatura.Setvalor(scanner);

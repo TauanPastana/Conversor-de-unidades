@@ -16,98 +16,98 @@ public class Moeda extends Unidade {
 
 
     public void Real_para_Dolar() {
-        float valorReal = getTempAtual();
+        float valorReal = getUnidadeAtual();
         float valorDolar = valorReal * 0.167f; // 1 BRL = 0.167 USD
-        setTemp_Convertida(valorDolar);
+        setUnidade_Convertida(valorDolar);
         System.out.printf("Conversão: %.2f reais equivalem a %.2f dólares.%n", valorReal, valorDolar);
         System.out.println("Conversão realizada: Real para Dólar.");
     }
 
     public void Dolar_para_Real() {
-        float valorDolar = getTempAtual();
+        float valorDolar = getUnidadeAtual();
         float valorReal = valorDolar * 5.9941f; // 1 USD = 5.9941 BRL
-        setTemp_Convertida(valorReal);
+        setUnidade_Convertida(valorReal);
         System.out.printf("Conversão: %.2f dólares equivalem a %.2f reais.%n", valorDolar, valorReal);
         System.out.println("Conversão realizada: Dólar para Real.");
     }
 
     public void Real_para_Euro() {
-        float valorReal = getTempAtual();
+        float valorReal = getUnidadeAtual();
         float valorEuro = valorReal * 0.147f; // 1 BRL = 0.147 EUR
-        setTemp_Convertida(valorEuro);
+        setUnidade_Convertida(valorEuro);
         System.out.printf("Conversão: %.2f reais equivalem a %.2f euros.%n", valorReal, valorEuro);
         System.out.println("Conversão realizada: Real para Euro.");
     }
 
     public void Euro_para_Real() {
-        float valorEuro = getTempAtual();
+        float valorEuro = getUnidadeAtual();
         float valorReal = valorEuro * 6.8016f; // 1 EUR = 6.8016 BRL
-        setTemp_Convertida(valorReal);
+        setUnidade_Convertida(valorReal);
         System.out.printf("Conversão: %.2f euros equivalem a %.2f reais.%n", valorEuro, valorReal);
         System.out.println("Conversão realizada: Euro para Real.");
     }
 
     public void Real_para_Libra() {
-        float valorReal = getTempAtual();
+        float valorReal = getUnidadeAtual();
         float valorLibra = valorReal * 0.130f; // 1 BRL = 0.130 GBP
-        setTemp_Convertida(valorLibra);
+        setUnidade_Convertida(valorLibra);
         System.out.printf("Conversão: %.2f reais equivalem a %.2f libras.%n", valorReal, valorLibra);
         System.out.println("Conversão realizada: Real para Libra.");
     }
 
     public void Libra_para_Real() {
-        float valorLibra = getTempAtual();
+        float valorLibra = getUnidadeAtual();
         float valorReal = valorLibra * 7.7147f; // 1 GBP = 7.7147 BRL
-        setTemp_Convertida(valorReal);
+        setUnidade_Convertida(valorReal);
         System.out.printf("Conversão: %.2f libras equivalem a %.2f reais.%n", valorLibra, valorReal);
         System.out.println("Conversão realizada: Libra para Real.");
     }
 
     // Conversões entre moedas estrangeiras
     public void Dolar_para_Euro() {
-        float valorDolar = getTempAtual();
+        float valorDolar = getUnidadeAtual();
         float valorEuro = valorDolar * 0.8815f; // 1 USD = 0.8815 EUR
-        setTemp_Convertida(valorEuro);
+        setUnidade_Convertida(valorEuro);
         System.out.printf("Conversão: %.2f dólares equivalem a %.2f euros.%n", valorDolar, valorEuro);
         System.out.println("Conversão realizada: Dólar para Euro.");
     }
 
     public void Euro_para_Dolar() {
-        float valorEuro = getTempAtual();
+        float valorEuro = getUnidadeAtual();
         float valorDolar = valorEuro * 1.1345f; // 1 EUR = 1.1345 USD
-        setTemp_Convertida(valorDolar);
+        setUnidade_Convertida(valorDolar);
         System.out.printf("Conversão: %.2f euros equivalem a %.2f dólares.%n", valorEuro, valorDolar);
         System.out.println("Conversão realizada: Euro para Dólar.");
     }
 
     public void Dolar_para_Libra() {
-        float valorDolar = getTempAtual();
+        float valorDolar = getUnidadeAtual();
         float valorLibra = valorDolar * 0.7785f; // 1 USD = 0.7785 GBP
-        setTemp_Convertida(valorLibra);
+        setUnidade_Convertida(valorLibra);
         System.out.printf("Conversão: %.2f dólares equivalem a %.2f libras.%n", valorDolar, valorLibra);
         System.out.println("Conversão realizada: Dólar para Libra.");
     }
 
     public void Libra_para_Dolar() {
-        float valorLibra = getTempAtual();
+        float valorLibra = getUnidadeAtual();
         float valorDolar = valorLibra * 1.2845f; // 1 GBP = 1.2845 USD
-        setTemp_Convertida(valorDolar);
+        setUnidade_Convertida(valorDolar);
         System.out.printf("Conversão: %.2f libras equivalem a %.2f dólares.%n", valorLibra, valorDolar);
         System.out.println("Conversão realizada: Libra para Dólar.");
     }
 
     public void Euro_para_Libra() {
-        float valorEuro = getTempAtual();
+        float valorEuro = getUnidadeAtual();
         float valorLibra = valorEuro * 0.8832f; // 1 EUR = 0.8832 GBP
-        setTemp_Convertida(valorLibra);
+        setUnidade_Convertida(valorLibra);
         System.out.printf("Conversão: %.2f euros equivalem a %.2f libras.%n", valorEuro, valorLibra);
         System.out.println("Conversão realizada: Euro para Libra.");
     }
 
     public void Libra_para_Euro() {
-        float valorLibra = getTempAtual();
+        float valorLibra = getUnidadeAtual();
         float valorEuro = valorLibra * 1.1322f; // 1 GBP = 1.1322 EUR
-        setTemp_Convertida(valorEuro);
+        setUnidade_Convertida(valorEuro);
         System.out.printf("Conversão: %.2f libras equivalem a %.2f euros.%n", valorLibra, valorEuro);
         System.out.println("Conversão realizada: Libra para Euro.");
     }

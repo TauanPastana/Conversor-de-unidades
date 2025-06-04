@@ -2,23 +2,20 @@ package classes;
 
 
 public abstract class Unidade {
-    private float temp_Atual;
-    private float temp_Convertida = 0;
+    private float Unidade_Atual;
+    private float Unidade_Convertida = 0;
 
-    public Unidade(float temp_Atual){
-        this.temp_Atual = temp_Atual;
+    public Unidade(float Unidade_Atual){
+        this.Unidade_Atual = Unidade_Atual;
         
         
     }
 
 
 
-    public void setTemp_Convertida(float temp_Convertida) {
-        this.temp_Convertida = temp_Convertida;
-    }
-
-
-
+    
+    
+    
     public static void clear_terminal() {
         try {
             if (System.getProperty("os.name").toLowerCase().contains("win")) {
@@ -30,40 +27,45 @@ public abstract class Unidade {
             System.out.println("Não foi possível limpar o terminal.");
         }
     }
-
-
+    
+    
 
 
     protected static float lerValor(java.util.Scanner scanner, String mensagem, boolean cond) {
         while (true) {
             System.out.print(mensagem);
+            // O método hasNextFLoat() return um valor True se o que o usuário irá digitar é um valor float ou int
             if (scanner.hasNextFloat()) {
                 float valor = scanner.nextFloat();
-                scanner.nextLine(); // Limpa o buffer
-                if (cond) { // Temperatura: aceita qualquer valor float
+                scanner.nextLine(); // 
+                if (cond) { // Aqui passará apenas para valores da classe Temperatura
                     return valor;
-                } else { // Medida: só aceita positivo
+                } else { // Aqui, para as demais classes que não aceitam um valores negativos
                     if (valor > 0) {
                         return valor;
                     } else {
                         System.out.println("\nValor inválido, digite um número positivo.");
                     }
                 }
+                // caso o valor que o usuário digitou não for um numérico, ele recomeça o loop
             } else {
                 System.out.println("Valor inválido, tente novamente.");
-                scanner.nextLine(); // Limpa o buffer
+                scanner.nextLine(); 
             }
         }
     }
+    
 
 
-
-
-    public float getTempAtual() {
-    return temp_Atual;
-}
-
-    public float getTempConvertida() {
-    return temp_Convertida;
+    // metodos get e set
+    public float getUnidadeAtual() {
+        return Unidade_Atual;
+    }
+    
+    public void setUnidade_Convertida(float Unidade_Convertida) {
+        this.Unidade_Convertida = Unidade_Convertida;
+    }
+    public float getUnidadeConvertida() {
+    return Unidade_Convertida;
 }
 }

@@ -16,65 +16,65 @@ public class Medida extends Unidade {
     }
 
     public void Metros_para_Centimetros() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual * 100;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f metros equivalem a %.2f centímetros.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Metros_para_Milimetros() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual * 1000;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f metros equivalem a %.2f milímetros.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Metros_para_Polegadas() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual * 39.3701f;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f metros equivalem a %.2f polegadas.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Metros_para_Pes() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual * 3.28084f;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f metros equivalem a %.2f pés.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Centimetros_para_Metros() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual / 100;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f centímetros equivalem a %.2f metros.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Milimetros_para_Metros() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual / 1000;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f milímetros equivalem a %.2f metros.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Polegadas_para_Metros() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual / 39.3701f;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f polegadas equivalem a %.2f metros.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }
 
     public void Pes_para_Metros() {
-        float atual = getTempAtual();
+        float atual = getUnidadeAtual();
         float convertido = atual / 3.28084f;
-        setTemp_Convertida(convertido);
+        setUnidade_Convertida(convertido);
         System.out.printf("Conversão: %.2f pés equivalem a %.2f metros.%n", atual, convertido);
         System.out.println("Conversão realizada: Celsius para Fahrenheit.");
     }

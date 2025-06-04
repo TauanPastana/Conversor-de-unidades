@@ -10,6 +10,7 @@ import classes.Temperatura;
 
 public class Main {
     public static void main(String[] args) {
+        // O objeto scanner é passado como parâmetro para várias classes, para não criar o mesmo objetos nas demais classes
         Scanner scanner = new java.util.Scanner(System.in);
         boolean cond = true;
         System.out.println("Bem vindo ao sistema de Conversor de unidades");
@@ -21,7 +22,8 @@ public class Main {
             System.out.println("Digite 4 se deseja converter moedas");
             System.out.println("Digite 0 para finalizar");
             String opc = scanner.nextLine();
-
+            
+            // Menu principal
             switch (opc) {
                 case "1":
                     Temperatura.Menu(scanner);
